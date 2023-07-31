@@ -93,7 +93,8 @@ class DetailPage extends StatelessWidget {
                             Row(
                               children: [
                                 const Icon(Icons.star),
-                                Text(state.dataDetailStore.rating.toString()),
+                                Text(state.dataDetailStore.rating.rate
+                                    .toString()),
                               ],
                             ),
                             const SizedBox(

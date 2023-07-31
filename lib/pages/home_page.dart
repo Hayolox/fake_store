@@ -98,7 +98,8 @@ class HomePage extends StatelessWidget {
                                   Row(
                                     children: [
                                       const Icon(Icons.star),
-                                      Text(state.dataHomeStore[index].rating
+                                      Text(state
+                                          .dataHomeStore[index].rating.rate
                                           .toString()),
                                     ],
                                   ),
