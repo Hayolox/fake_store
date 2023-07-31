@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final detailStoreModel = detailStoreModelFromJson(jsonString);
-
 import 'dart:convert';
 
 DetailStoreModel detailStoreModelFromJson(String str) =>
@@ -18,6 +14,7 @@ class DetailStoreModel {
   String category;
   String image;
   Rating rating;
+  bool isFavorite;
 
   DetailStoreModel({
     required this.id,
@@ -27,6 +24,7 @@ class DetailStoreModel {
     required this.category,
     required this.image,
     required this.rating,
+    this.isFavorite = false,
   });
 
   factory DetailStoreModel.fromJson(Map<String, dynamic> json) =>
@@ -38,6 +36,7 @@ class DetailStoreModel {
         category: json["category"],
         image: json["image"],
         rating: Rating.fromJson(json["rating"]),
+        isFavorite: json["isFavorite"] ?? false,
       );
 
   Map<String, dynamic> toJson() => {
@@ -48,6 +47,7 @@ class DetailStoreModel {
         "category": category,
         "image": image,
         "rating": rating.toJson(),
+        "isFavorite": isFavorite,
       };
 }
 

@@ -19,6 +19,7 @@ class HomeStoreModel {
   Category category;
   String image;
   Rating rating;
+  bool isFavorite;
 
   HomeStoreModel({
     required this.id,
@@ -28,6 +29,7 @@ class HomeStoreModel {
     required this.category,
     required this.image,
     required this.rating,
+    this.isFavorite = true,
   });
 
   factory HomeStoreModel.fromJson(Map<String, dynamic> json) => HomeStoreModel(
@@ -38,6 +40,7 @@ class HomeStoreModel {
         category: categoryValues.map[json["category"]]!,
         image: json["image"],
         rating: Rating.fromJson(json["rating"]),
+        isFavorite: json["isFavorite"] ?? false,
       );
 
   Map<String, dynamic> toJson() => {
@@ -48,6 +51,7 @@ class HomeStoreModel {
         "category": categoryValues.reverse[category],
         "image": image,
         "rating": rating.toJson(),
+        "isFavorite": isFavorite,
       };
 }
 

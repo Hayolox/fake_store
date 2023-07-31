@@ -1,10 +1,9 @@
-import 'dart:ui';
-
 import 'package:fake_store_app/bloc/bloc/store_bloc.dart';
+import 'package:fake_store_app/data/model/detail_store_model.dart';
+
 import 'package:fake_store_app/pages/detail_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
@@ -74,9 +73,12 @@ class HomePage extends StatelessWidget {
                                       alignment: Alignment.topRight,
                                       child: IconButton(
                                         onPressed: () {},
-                                        icon: const Icon(
+                                        icon: Icon(
                                           Icons.favorite,
-                                          color: Colors.grey,
+                                          color: state.dataHomeStore[index]
+                                                  .isFavorite
+                                              ? Colors.red
+                                              : Colors.grey,
                                         ),
                                       ),
                                     ),

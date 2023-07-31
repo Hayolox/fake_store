@@ -16,3 +16,9 @@ class GetDataDetailStoreEvent extends StoreEvent {
   @override
   List<Object> get props => [id];
 }
+
+// ignore: camel_case_types
+class addFavoriteHomeEvent extends StoreEvent {
+  DetailStoreModel addFavoritDataStore;
+  addFavoriteHomeEvent(this.addFavoritDataStore);
+}
