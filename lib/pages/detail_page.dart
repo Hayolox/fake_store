@@ -1,5 +1,7 @@
+import 'package:fake_store_app/widget/detail_load.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletons/skeletons.dart';
 
 import '../bloc/bloc/store_bloc.dart';
 
@@ -127,9 +129,7 @@ class DetailPage extends StatelessWidget {
               );
             }
 
-            return const Center(
-              child: Text('Loading'),
-            );
+            return const DetailLoad();
           },
         ),
       ),
